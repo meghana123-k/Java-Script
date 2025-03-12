@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Booleans</title>
+  </head>
+  <body>
+    <script>
+      const a = 5;
+      if (a <= 6 || a >= 65) {
+        console.log("Discount");
+      } else {
+        console.log("No discount");
+      }
+      const ages = 5;
+      const holiday = true;
+      if ((ages <= 6 || ages >= 65) && !holiday) {
+        console.log("Discount");
+      } else {
+        console.log("No discount");
+      }
+      const randomNumber = Math.random();
+      if (randomNumber < 0.5) {
+        console.log("heads");
+      } else {
+        console.log("tails");
+      }
+      const randomNumber1 = Math.random();
+      let result;
+      if (randomNumber1 < 0.5) {
+        result = "heads";
+      } else {
+        result = "tails";
+      }
+      const guess = "heads";
+      if (guess === result) {
+        console.log("You win!");
+      } else {
+        console.log("You lose!");
+      }
+    </script>
+  </body>
+</html>
