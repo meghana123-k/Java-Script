@@ -1,0 +1,20 @@
+body {
+    background-color: black;
+}
+.heading {
+    color: white;
+    font-size: 40px;
+    font-family: Roboto, Arial;
+    font-weight: 700;
+    padding-left: 60px;
+}
+
+.emoji {
+    border-radius: 50%;
+    border: 2px solid white;
+    height: 150px;
+    width: 150px;
+    font-size: 50px;
+    background-color: black;
+    margin-left: 25px;
+}
