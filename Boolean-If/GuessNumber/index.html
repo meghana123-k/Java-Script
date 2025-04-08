@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guess Correct</title>
+</head>
+<body>
+  <script>
+    let randomNumber = Math.random();
+
+    const result = randomNumber > 0.5 ? 'Heads' : 'Tails';
+    const guess = 'Heads'
+    alert(guess === result ? "You Win!" : "You Lose!")
+  </script>
+</body>
+</html>
