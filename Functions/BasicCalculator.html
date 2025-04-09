@@ -10,7 +10,7 @@
       }
       .calc {
         padding-left: 50px;
-        color: #0092CC;
+        color: #0092cc;
         font-size: 30px;
         font-family: Roboto, Arial;
         font-weight: 700;
@@ -25,8 +25,9 @@
         border-radius: 4px;
         font-size: 25px;
         margin: 10px;
-        
-        background-color: #DFFF00;
+        cursor: pointer;
+        border: 2px solid green;
+        background-color: #dfff00;
       }
     </style>
   </head>
@@ -34,28 +35,32 @@
     <p class="calc">Calculator</p>
     <div class="main">
       <div class="sec1">
-        <button class="but"
+        <button
+          class="but"
           onclick="
         updateCalculation('1');
       "
         >
           1
         </button>
-        <button class="but"
+        <button
+          class="but"
           onclick="
         updateCalculation('2');
       "
         >
           2
         </button>
-        <button class="but"
+        <button
+          class="but"
           onclick="
         updateCalculation('3');
       "
         >
           3
         </button>
-        <button class="but"
+        <button
+          class="but"
           onclick="
         updateCalculation(' + ');
       "
@@ -64,28 +69,32 @@
         </button>
       </div>
       <div class="sec1">
-        <button class="but"
+        <button
+          class="but"
           onclick="
         updateCalculation('4');
       "
         >
           4
         </button>
-        <button class="but"
+        <button
+          class="but"
           onclick="
         updateCalculation('5');
       "
         >
           5
         </button>
-        <button class="but"
+        <button
+          class="but"
           onclick="
         updateCalculation('6');
       "
         >
           6
         </button>
-        <button class="but"
+        <button
+          class="but"
           onclick="
         updateCalculation(' - ');
       "
@@ -94,28 +103,32 @@
         </button>
       </div>
       <div class="sec1">
-        <button class="but"
+        <button
+          class="but"
           onclick="
         updateCalculation('7');
       "
         >
           7
         </button>
-        <button class="but"
+        <button
+          class="but"
           onclick="
         updateCalculation('8');
       "
         >
           8
         </button>
-        <button class="but"
+        <button
+          class="but"
           onclick="
         updateCalculation('9');
       "
         >
           9
         </button>
-        <button class="but"
+        <button
+          class="but"
           onclick="
         updateCalculation(' * ');
       "
@@ -124,28 +137,32 @@
         </button>
       </div>
       <div class="sec1">
-        <button class="but"
+        <button
+          class="but"
           onclick="
         updateCalculation('0');
       "
         >
           0
         </button>
-        <button class="but"
+        <button
+          class="but"
           onclick="
         updateCalculation('.');
       "
         >
           .
         </button>
-        <button class="but"
+        <button
+          class="but"
           onclick="
         updateCalculation(' / ');
       "
         >
           /
         </button>
-        <button class="but"
+        <button
+          class="but"
           onclick="
         calculation = eval(calculation);
         console.log(calculation);
@@ -155,7 +172,8 @@
         </button>
       </div>
       <div class="sec1">
-        <button class="but"
+        <button
+          class="but"
           onclick="
         calculation = '';
         console.log(calculation);
@@ -166,7 +184,7 @@
       </div>
     </div>
     <script>
-      let calculation = '';
+      let calculation = "";
       function updateCalculation(value) {
         calculation += value;
         console.log(calculation);
