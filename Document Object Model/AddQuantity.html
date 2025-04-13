@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercises</title>
+  </head>
+  <body>
+    <button
+      onclick="
+    displayQuantity();"
+      class="js-display"
+    >
+      Show Quantity
+    </button>
+    <button
+      onclick="
+      addOne();
+    displayQuantity()"
+      class="js-add-one"
+    >
+      Add to Cart
+    </button>
+    <button
+      onclick=" addTwo();
+     displayQuantity()"
+      class="js-add-two"
+    >
+      +2
+    </button>
+    <button
+      onclick="
+    addThree();
+    displayQuantity()"
+      class="js-add-three"
+    >
+      +3
+    </button>
+    <button
+      onclick="
+    removeOne();
+    displayQuantity()"
+    >
+      Remove from Cart
+    </button>
+    <button
+      onclick="
+    removeTwo();
+    displayQuantity()"
+      class="js-remove-two"
+    >
+      -2
+    </button>
+    <button
+      onclick="
+    removeThree();
+    displayQuantity()"
+      class="js-remove-three"
+    >
+      -3
+    </button>
+    <p class="js-cart-quantity"></p>
+    <script>
+      const NoOfItems = {
+        items: 0,
+      };
+      function addOne() {
+        NoOfItems.items += 1;
+      }
+      function addTwo() {
+        NoOfItems.items += 2;
+      }
+      function addThree() {
+        NoOfItems.items += 3;
+      }
+      function removeOne() {
+        if (NoOfItems.items != 0) {
+          NoOfItems.items -= 1;
+        }
+      }
+      function removeTwo() {
+        if (NoOfItems.items != 0) {
+          NoOfItems.items -= 2;
+        }
+      }
+      function removeThree() {
+        if (NoOfItems.items != 0) {
+          NoOfItems.items -= 3;
+        }
+      }
+      function displayQuantity() {
+        document.querySelector(
+          ".js-cart-quantity"
+        ).innerHTML = `Cart Quantity ${NoOfItems.items}`;
+      }
+    </script>
+  </body>
+</html>
