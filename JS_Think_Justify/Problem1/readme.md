@@ -1,15 +1,8 @@
- **What Actually Happens?**
+**What Actually Happens?**
 ------------------------------------------------
 const counterA = createCounter();
 1. createCounter() is a function which is called.
-function createCounter() {
-  let count = 0;
-  function incrementCounter() {
-    count++;
-    return count;
-  }
-  return incrementCounter;
-}
+<pre> <code>```javascript function createCounter() { let count = 0; function incrementCounter() { count++; return count; } return incrementCounter; } ```</code> </pre>
 2. Now, the count = 0, the return value of createCounter() is again inner function named incrementCounter.
 3. In incrementCounter(), the count value is incremented and returned.
 4. const counterA = createCounter();
@@ -19,7 +12,6 @@ As counterA return type is a function, we use (), then it prints - 1.
 6. Again, when we call the same function, the count value is updated and prints - 2
 console.log(counterA());
 7. const counterB = createCounter();
-
 Now, again the count = 0 and and returned the count values as 1;
 8. console.log(counterB());
 It prints - 1
@@ -28,6 +20,6 @@ It prints - 1
 ------------------------------------------
 **Benefit of closure**
 1. You cannot access or modify count from the outside.
--------------------------
+------------------------------------------
 **Modified**
-if count  = 10 (modified) from outside or try to print the count value will throws error.
+1. if count  = 10 (modified) from outside or try to print the count value will throws error.
