@@ -2,7 +2,16 @@
 ------------------------------------------------
 const counterA = createCounter();
 1. createCounter() is a function which is called.
-<pre> <code>```javascript function createCounter() { let count = 0; function incrementCounter() { count++; return count; } return incrementCounter; } ```</code> </pre>
+<pre> <code>```javascript
+function createCounter() {
+  let count = 0;
+  function incrementCounter() {
+    count++;
+    return count;
+  }
+  return incrementCounter;
+}
+</code> </pre>
 2. Now, the count = 0, the return value of createCounter() is again inner function named incrementCounter.
 3. In incrementCounter(), the count value is incremented and returned.
 4. const counterA = createCounter();
