@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Counter </title>
+    <style>
+      body {
+        background-color: #d9e1f8;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .container {
+        /*border: 2px solid black;*/
+        padding: 5px 20px 50px;
+        text-align: center;
+        background-color: rgb(247, 204, 247);
+        box-shadow: 5px 5px 40px grey;
+        margin-top: 200px;
+        height: 30vh;
+        width: 50vh;
+        border-radius: 15px;
+      }
+      .heading {
+        font-size: 40px;
+        font-weight: 600;
+      }
+      .display {
+        font-size: 48px;
+        margin: 20px 0;
+        color: #333;
+      }
+      button {
+        padding: 10px 20px;
+        font-size: 18px;
+        margin: 0 10px;
+        border: none;
+        border-radius: 8px;
+        background-color: coral;
+        cursor: pointer;
+        transition: 0.3s;
+        box-shadow: 1px 1px 8px grey;
+      }
+      button:hover {
+        background-color: rgb(238, 94, 42);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <p class="heading">Simple Counter</p>
+      <div class="display">0</div>
+      <div class="buttons">
+        <button onclick="decrement(), displayCounter()">Decrement</button>
+        <button onclick="increment(), displayCounter()">Increment</button>
+      </div>
+    </div>
+    <script>
+      let count = 0;
+
+      function decrement() {
+        if (count > 0) {
+          count--;
+        }
+      }
+      function increment() {
+        count++;
+      }
+      function displayCounter() {
+        document.querySelector(".display").innerHTML = count;
+      }
+    </script>
+  </body>
+</html>
