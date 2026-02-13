@@ -25,8 +25,8 @@ let r1 = ar.map((num)=> {
 })
 console.log(r1);
 
+// Calculating the factorial of a number using reduce method
 let number = 5;
-let factorial = 1;
 
 let arr1 = []
 for(let i = 1; i <= number; i++) {
