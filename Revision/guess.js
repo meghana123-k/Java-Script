@@ -39,4 +39,16 @@ if (num > 4) {
 } else {
   location.href = "https://codewithharry.com";
 }
+// Write a program to take a color as input and change the background color of the webpage accordingly. The program should handle at least three different colors and provide feedback for invalid inputs.
 
+let color = prompt("Enter color: red, blue, yellow");
+
+if (color === "yellow") {
+  document.body.style.backgroundColor = "yellow";
+} else if (color === "blue") {
+  document.body.style.backgroundColor = "blue";
+} else if (color === "red") {
+  document.body.style.backgroundColor = "red";
+} else {
+  alert("Invalid");
+}
