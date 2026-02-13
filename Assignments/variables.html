@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Variables</title>
+</head>
+<body>
+  <script> 
+    /* Global Scope*/
+    let fname = "Meghana";
+    function printName() {
+      console.log(`Your Name is ${fname}`);
+    }
+    printName();
+    let lname = "Kothakonda";
+    console.log(`Your Full Name is ${fname} ${lname}`);
+
+    /* Local Scope */
+    function greet() {
+      let message = "Hello World!!";
+      console.log(message);
+    }
+    //console.log(message); Error
+
+    /* Block Scope */
+    if(1 == '1') {
+      let sayBool = 'yes';
+      console.log(sayBool);
+    }
+    // console.log(sayBool) // Error
+
+    /* variable shadowing */
+    let fruit = "Apple"
+    function addFruit() {
+      let fruit = "Mango";
+      console.log(`${fruit} is added into List`);
+    }
+    addFruit();
+    console.log(`${fruit} is added into List`);
+    /* Hoisting with var*/
+    var var1;
+    console.log(var1);
+    /*Scope Issues with var*/
+    function scopeIssues() {
+      noScope = "No Declaration for noScope Variable"; 
+      console.log(noScope);
+    }
+    scopeIssues();
+    console.log(noScope);
+  </script>
+</body>
+</html>

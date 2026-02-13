@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Objects</title>
+  </head>
+  <body>
+    <script>
+      const book1 = {
+        title: "Amma diary lo konni pageelu",
+        author: "Ravi Manthri",
+        isbn: 123456789,
+        isBorrowed: false,
+
+        borrow: function () {
+          (this.isBorrowed = true),
+            console.log(`${this.title} has been borrowed..`);
+        },
+        returnBook: function () {
+          (this.isBorrowed = false),
+            console.log(`${this.title} has been returned..`);
+        },
+      };
+
+      const library = {
+        books: [],
+
+        addBook: function (book) {
+          this.books.push(book);
+          console.log(`"${book.title}" added to the library.`);
+        },
+
+        findBookByISBN: function (isbn) {
+          return this.books.find((book) => book.isbn === isbn);
+        },
+
+        listAvailableBooks: function () {
+          return this.books.filter((book) => !book.isBorrowed);
+        },
+
+        listBorrowedBooks: function () {
+          return this.books.filter((book) => book.isBorrowed);
+        },
+      };
+      library.addBook(book1); // Add book1 to the library
+      book1.borrow(); // Borrow the book
+      console.log(library.listBorrowedBooks()); // List borrowed books
+      book1.returnBook(); // Return the book
+      console.log(library.listAvailableBooks()); // List available books
+    </script>
+  </body>
+</html>

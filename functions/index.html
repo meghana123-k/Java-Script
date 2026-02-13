@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <style>
+      body {
+        background-color: black;
+      }
+      .calc {
+        padding-left: 50px;
+        color: #0092cc;
+        font-size: 30px;
+        font-family: Roboto, Arial;
+        font-weight: 700;
+      }
+      .main {
+        border: 2px solid white;
+        width: 250px;
+      }
+      .but {
+        font-weight: 700;
+        padding: 10px;
+        border-radius: 4px;
+        font-size: 25px;
+        margin: 10px;
+        cursor: pointer;
+        border: 2px solid green;
+        background-color: #dfff00;
+      }
+    </style>
+  </head>
+  <body>
+    <p class="calc">Calculator</p>
+    <div class="main">
+      <div class="sec1">
+        <button
+          class="but"
+          onclick="
+        updateCalculation('1');
+      "
+        >
+          1
+        </button>
+        <button
+          class="but"
+          onclick="
+        updateCalculation('2');
+      "
+        >
+          2
+        </button>
+        <button
+          class="but"
+          onclick="
+        updateCalculation('3');
+      "
+        >
+          3
+        </button>
+        <button
+          class="but"
+          onclick="
+        updateCalculation(' + ');
+      "
+        >
+          +
+        </button>
+      </div>
+      <div class="sec1">
+        <button
+          class="but"
+          onclick="
+        updateCalculation('4');
+      "
+        >
+          4
+        </button>
+        <button
+          class="but"
+          onclick="
+        updateCalculation('5');
+      "
+        >
+          5
+        </button>
+        <button
+          class="but"
+          onclick="
+        updateCalculation('6');
+      "
+        >
+          6
+        </button>
+        <button
+          class="but"
+          onclick="
+        updateCalculation(' - ');
+      "
+        >
+          -
+        </button>
+      </div>
+      <div class="sec1">
+        <button
+          class="but"
+          onclick="
+        updateCalculation('7');
+      "
+        >
+          7
+        </button>
+        <button
+          class="but"
+          onclick="
+        updateCalculation('8');
+      "
+        >
+          8
+        </button>
+        <button
+          class="but"
+          onclick="
+        updateCalculation('9');
+      "
+        >
+          9
+        </button>
+        <button
+          class="but"
+          onclick="
+        updateCalculation(' * ');
+      "
+        >
+          *
+        </button>
+      </div>
+      <div class="sec1">
+        <button
+          class="but"
+          onclick="
+        updateCalculation('0');
+      "
+        >
+          0
+        </button>
+        <button
+          class="but"
+          onclick="
+        updateCalculation('.');
+      "
+        >
+          .
+        </button>
+        <button
+          class="but"
+          onclick="
+        updateCalculation(' / ');
+      "
+        >
+          /
+        </button>
+        <button
+          class="but"
+          onclick="
+        calculation = eval(calculation);
+        console.log(calculation);
+        "
+        >
+          =
+        </button>
+      </div>
+      <div class="sec1">
+        <button
+          class="but"
+          onclick="
+        calculation = '';
+        console.log(calculation);
+      "
+        >
+          clear
+        </button>
+      </div>
+    </div>
+    <script>
+      let calculation = "";
+      function updateCalculation(value) {
+        calculation += value;
+        console.log(calculation);
+      }
+    </script>
+  </body>
+</html>

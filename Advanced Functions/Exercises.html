@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercises</title>
+  </head>
+  <body>
+    <button onclick="changeFinished()" class="js-button">Start</button>
+    <button onclick="addedItem()" class="js-add-to-cart-button">
+      Add to Cart
+    </button>
+    <h3 id="text"></h3>
+    <button onclick=" messages++ " class="add">Add</button>
+    <button onclick="messages--" class="remove">Remove</button>
+    <script>
+      /* 1 */
+      const add = function () {
+        return 2 + 3;
+      };
+      console.log(add());
+      console.log(add());
+      /* 2 */
+      const runTwice = function (fun) {
+        console.log("Hello " + fun);
+      };
+      runTwice(add());
+      runTwice(add());
+      /* 3 */
+      /*function changeFinished() {
+      setTimeout(function() {
+        document.querySelector(".js-button").textContent = "Finished";
+      }, 1000)
+    }*/
+      /* 4 */
+      function changeFinished() {
+        setTimeout(function () {
+          document.querySelector(".js-button").textContent = "Loading";
+        });
+        setTimeout(function () {
+          document.querySelector(".js-button").textContent = "Finished";
+        }, 1000);
+      }
+      /* 5 */
+      let timeoutId;
+      function addedItem() {
+        const messageElement = document.querySelector("#text");
+        messageElement.textContent = "Added";
+
+        clearTimeout(timeoutId);
+
+        timeoutId = setTimeout(function () {
+          messageElement.textContent = "";
+        }, 2000);
+      }
+      /* 6 */
+      let messages = 2;
+      let timeoutId1;
+      if (messages === 0) {
+        clearTimeout(timeoutId1);
+        document.title = `App`;
+      } else if (messages > 0) {
+        timeoutId1 = setInterval(function () {
+          if (document.title === "App") {
+            document.title = `(${messages}) New messages`;
+          } else {
+            document.title = "App";
+          }
+        }, 1000);
+      }
+    </script>
+  </body>
+</html>

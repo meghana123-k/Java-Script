@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock-Paper-Scissor</title>
+    <link rel="stylesheet" href="./style.css" />
+    <style>
+      body {
+        background-color: black;
+        font-family: Roboto, Arial;
+      }
+      .heading {
+        color: white;
+        font-size: 40px;
+        font-weight: 700;
+        margin-left: 100px;
+      }
+
+      .emoji {
+        border-radius: 50%;
+        border: 2px solid white;
+        height: 150px;
+        width: 150px;
+        font-size: 50px;
+        background-color: black;
+        margin-left: 25px;
+      }
+      .js-result {
+        color: white;
+        font-size: 35px;
+        padding-left: 100px;
+      }
+      .js-moves {
+        color: white;
+        font-size: 35px;
+        padding-left: 100px;
+      }
+      .js-score {
+        color: white;
+        font-size: 35px;
+        padding-left: 100px;
+      }
+      .reset {
+        margin-top: 50px;
+        margin-left: 200px;
+        padding: 10px 30px;
+        font-size: 18px;
+        border-radius: 5px;
+        background-color: #ffac33;
+        font-weight: 600;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <p class="heading">Rock Paper Scissor</p>
+      <div class="section">
+        <button
+          onclick="
+            playGame('rock');
+          "
+          class="emoji"
+        >
+          ✊
+        </button>
+        <button
+          onclick="
+            playGame('paper');
+          "
+          class="emoji"
+        >
+          ✋
+        </button>
+        <button
+          onclick="
+            playGame('scissors');
+          "
+          class="emoji"
+        >
+          ✌️
+        </button>
+      </div>
+      <p class="js-result"></p>
+      <p class="js-moves"></p>
+      <p class="js-score"></p>
+      <button
+        class="reset"
+        onclick="
+        scores.win = 0;
+        scores.losses = 0;
+        scores.tie = 0;
+        localStorage.removeItem('scores');
+        updateScore();
+      "
+      >
+        Reset Score
+      </button>
+    </div>
+    <script>
+      
+    </script>
+  </body>
+</html>

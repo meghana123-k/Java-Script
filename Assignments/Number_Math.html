@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Number and Math</title>
+  </head>
+  <style>
+    .js-input-style {
+      height: 45px;
+      width: 250px;
+      border: 1px solid black;
+    }
+    .js-input-style::placeholder {
+      font-size: 16px;
+      padding-left: 9px;
+    }
+    .js-button {
+      font-family: Roboto, Arial;
+      background-color: green;
+      color: white;
+      padding: 14px 28px;
+      border: 2px solid green;
+      font-size: 18px;
+      font-weight: 500;
+      border-radius: 5px;
+    }
+    .js-result {
+      font-weight: 600;
+      font-family: 25px;
+      color: red;
+    }
+  </style>
+  <body>
+    <h1>Currency Formatter</h1>
+    <input placeholder="Enter amount" class="js-input-amount js-input-style" />
+    <br> <br>
+    <input
+      placeholder="Enter Currency (USD, EUR, INR)"
+      class="js-input-currencyCode js-input-style"
+    />
+    <br><br>
+    <button
+      class="js-button"
+      onclick="
+    formatCurrency();
+    "
+    >
+      Format Currency
+    </button>
+    <p class="js-result"></p>
+    <script>
+      function formatCurrency() {
+        const amount = parseFloat(
+          document.querySelector(".js-input-amount").value
+        );
+        const currencyCode = document
+          .querySelector(".js-input-currencyCode")
+          .value.toUpperCase();
+
+        let locale;
+
+        /*switch (currencyCode) {
+          case "USD":
+            locale = "en-US";
+            break;
+          case "EUR":
+            locale = "de-DE";
+            break;
+          case "INR":
+            locale = "en-IN";
+            break;
+          default:
+            locale = "en-US";
+        }
+
+        const formatter = new Intl.NumberFormat(locale, {
+          style: "currency",
+          currency: currencyCode,
+        });*/
+
+        switch (currencyCode) {
+          case "USD":
+            locale = "en-US";
+            break;
+          case "INR":
+            locale = "en-IN";
+            break;
+          case "EUR":
+            locale = "de-DE";
+            break;
+          default:
+            locale = "en-US";
+        }
+        const formatter = new Intl.NumberFormat(locale, {
+          style: 'currency',
+          currency: currencyCode,
+        });
+        const formattedAmount = formatter.format(amount);
+        document.querySelector(
+          ".js-result"
+        ).textContent = `Formatted: ${formattedAmount}`;
+      }
+    </script>
+  </body>
+</html>

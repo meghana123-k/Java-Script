@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercises</title>
+  </head>
+  <body>
+    <!-- 1 -->
+    <button>Button1</button>
+    <!-- 2 -->
+    <button class="js-button">Button2</button>
+    <br /><br /><br />
+    <br />
+    <!-- 3 -->
+    <button
+      onclick="
+playerMove('Head');
+    "
+      class="js-head"
+    >
+      Head
+    </button>
+    <button
+      onclick="
+    playerMove('Tails')
+    "
+    >
+      Tail
+    </button>
+    <p class="text"></p>
+
+    <!-- 4 -->
+    <input
+      onkeydown="
+     handleNameKeyDown(event);
+     "
+      class="js-text-input"
+      type="text"
+      placeholder="Enter your Name"
+    />
+    <button onclick="displayName()" class="js-submit-button">Submit</button>
+    <p class="js-display-name"></p>
+    <!-- 5 -->
+     <input class="js-cost-input" onkeydown="
+    handleCostKeyDown(event);
+    " placeholder="Cost of Order" />
+    <button
+    onclick="
+    calculateTotal();
+      "
+      class="cal-button"
+    >
+      Calculate
+    </button>
+    <p class="js-total-cost"></p>
+    <br> <br>
+    <!-- 6 -->
+    <input onkeyup="
+    generateText();
+    " type="text" placeholder="Enter something..." class="js-input-something">
+    <p class="js-auto-generate-text"></p>
+    <script>
+      /* 1 */
+      console.log(document.querySelector("button"));
+      /* 2 */
+      const buttonElement = document.querySelector(".js-button").innerHTML;
+      console.log(buttonElement);
+      /* 3 */
+      function generateRandomNumber() {
+        let randomNumber = Math.random();
+        let computerMove = "";
+        if (randomNumber < 0.5) {
+          computerMove = "Head";
+        } else {
+          computerMove = "Tails";
+        }
+        return computerMove;
+      }
+      function playerMove(guess) {
+        let computerMove = generateRandomNumber();
+        if (computerMove === guess) {
+          document.querySelector(".text").innerHTML = "You Won!!";
+        } else {
+          document.querySelector(".text").innerHTML = "You Lose!!";
+        }
+      }
+      /* 4 */
+      function displayName() {
+        const name = document.querySelector(".js-text-input").value;
+        document.querySelector(".js-display-name").innerHTML = name;
+      }
+      function handleNameKeyDown(event) {
+        if (event.key === "Enter") {
+          displayName();
+        }
+      }
+      /* 5 */
+      function calculateTotal() {
+        const inputElement = document.querySelector('.js-cost-input');
+
+        let cost = Number(inputElement.value) * 100;
+        if(cost < 4000) {
+          cost = cost + 1000;
+        }
+        document.querySelector('.js-total-cost').innerHTML = `$${cost / 100}`;
+      }
+      function handleCostKeyDown(event) {
+        if(event.key === 'Enter') {
+          calculateTotal();
+        }
+      }
+      /* 6 */
+      function generateText() {
+        document.querySelector('.js-auto-generate-text').innerHTML = document.querySelector('.js-input-something').value;
+      }
+    </script>
+  </body>
+</html>

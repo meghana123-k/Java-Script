@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercises</title>
+    <style>
+      .toggle-button {
+        font-family: Roboto, Arial;
+        background-color: green;
+        color: white;
+        padding: 14px 28px;
+        border: none;
+        font-size: 18px;
+        font-weight: 500;
+        border-radius: 5px;
+      }
+      .is-toggled {
+        font-family: Roboto, Arial;
+        background-color: white;
+        color: green;
+        padding: 14px 28px;
+        border: 2px solid green;
+        font-size: 18px;
+        font-weight: 500;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <button onclick="isToggled('.js-gaming')" class="toggle-button js-gaming">
+      Gaming
+    </button>
+    <button onclick="isToggled('.js-music')" class="toggle-button js-music">
+      Music
+    </button>
+    <button onclick="isToggled('.js-tech')" class="toggle-button js-tech">
+      Tech
+    </button>
+    <script>
+      function isToggled(selector) {
+        const buttonElement = document.querySelector(selector);
+        if (!buttonElement.classList.contains('is-toggled')) {
+          turnOffPreviousButton();
+          buttonElement.classList.add("is-toggled");
+        } else {
+          buttonElement.classList.remove("is-toggled");
+        }
+      }
+      
+      function turnOffPreviousButton() {
+        const previousButton = document.querySelector('.is-toggled');
+        if(previousButton) {
+          previousButton.classList.remove("is-toggled");
+        }
+      }
+    </script>
+  </body>
+</html>

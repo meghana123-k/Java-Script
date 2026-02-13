@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Boolean and If-Statements</title>
+  </head>
+  <body>
+    <script>
+      const obj = {
+        age: 20,
+        hasLicense: true,
+        temperature: 35,
+        humidity: 90,
+        role: 'admin',
+        isActive: true,
+        isStudent:true,
+        hasValidID: true,
+        isEnrolled: false,
+        isPremium: true,
+        subscriptionExpired: true,
+        shift: 'morning',
+        loggedIn: true,
+        isRestricted:false,
+        add: function(a, b) {
+          return a+b;
+        },
+      }
+      
+      function evaluateConditions(obj) {
+        if(obj.age > 18 && obj.hasLicense) {
+          console.log("Eligible to drive.");
+        }
+        if(obj.temperature > 30 || obj.humidity > 70) {
+          console.log("Warning: High discomfort level.");
+        }
+        if((obj.role === 'admin' || obj.role === 'editor') || obj.isActive) {
+          console.log("Access granted.");
+        }
+        if(obj.isStudent && obj.hasValidID && !obj.isEnrolled) {
+          console.log("Please complete your enrollment");
+        } 
+        if(obj.isPremium && (obj.subscriptionExpired || obj.paymentPending)) {
+          console.log("RE-New your premium account");
+        }
+        if(obj.shift === "night" && !obj.loggedIn) {
+          console.log("Night shift worker not logged in");
+        }
+        if(obj.isRestricted && !(obj.role === 'admin' || obj.role === 'supervisor')) {
+          console.log("Unauthorized access attempt detected.");
+        }
+      }
+      evaluateConditions(obj);
+    </script>
+  </body>
+</html>

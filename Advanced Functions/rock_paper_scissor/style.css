@@ -1,0 +1,49 @@
+body {
+  background-color: black;
+  font-family: Roboto, Arial;
+}
+
+.heading {
+  color: white;
+  font-size: 40px;
+  font-weight: 700;
+  margin-left: 100px;
+}
+
+.emoji {
+  border-radius: 50%;
+  border: 2px solid white;
+  height: 150px;
+  width: 150px;
+  font-size: 50px;
+  background-color: black;
+  margin-left: 25px;
+  cursor: pointer;
+}
+.js-result {
+  color: white;
+  font-size: 35px;
+  padding-left: 100px;
+  font-weight: 700;
+}
+.js-moves {
+  color: white;
+  font-size: 35px;
+  padding-left: 100px;
+}
+.js-score {
+  color: white;
+  font-size: 35px;
+  padding-left: 100px;
+}
+.reset,
+.auto-play-button {
+  cursor: pointer;
+  margin-top: 50px;
+  margin-left: 100px;
+  padding: 10px 30px;
+  font-size: 18px;
+  border-radius: 5px;
+  background-color: #ffac33;
+  font-weight: 600;
+}

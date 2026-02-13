@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML CSS Code Review</title>
+    <style>
+      .highlight {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <ul id="myList">
+      <li>Apple</li>
+      <li>Banana</li>
+      <li>Cherry</li>
+      <li>Date</li>
+      <li>Grapes</li>
+      <li>Mango</li>
+      <li>Guava</li>
+    </ul>
+    <script>
+      const listItems = document.querySelectorAll("#myList li");
+      console.log("All list items:", listItems);
+
+      listItems.forEach((item, index) => {
+        console.log(`Item ${index + 1}: ${item.textContent}`);
+      });
+
+      listItems.forEach((item, index) => {
+        if ((index + 1) % 2 === 0) {
+          item.classList.add("highlight");
+          console.log(`Highlight added to: ${item.textContent}`);
+        }
+      });
+
+      console.log('Total list items:', listItems.length);
+    </script>
+  </body>
+</html>
