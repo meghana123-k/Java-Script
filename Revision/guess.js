@@ -31,3 +31,12 @@ if (con) {
 } else {
   alert("you cannot choosed");
 }
+// Write a program to take a number as input and redirect the user to a different website based on the value of the number. For example, if the number is greater than 10, redirect to "https://www.google.com", otherwise redirect to "https://www.bing.com".
+// git commit -m "Added guess.js file with number guessing game and age eligibility check"
+let num = Number.parseInt(prompt("Enter number: "));
+
+if (num > 4) {
+  location.href = "https://jsfiddle.com";
+} else {
+  location.href = "https://codewithharry.com";
+}
