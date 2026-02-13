@@ -11,10 +11,23 @@ while (true) {
     console.log("Too high! Try again.");
   }
 }
-// Write a program to take age as input from the user and check if they are eligible to drive or not. (18 or above is eligible to drive)
+// Write a program to take the age of a person as input and determine if they are eligible to drive. The program should also handle invalid inputs (e.g., negative numbers) and provide appropriate feedback.
 let age = prompt("Enter age: ");
+if (age < 0) {
+  console.error("Wrong input");
+}
 if (age >= 18) {
   alert("You can drive...");
 } else {
   alert("You cannot drive");
+}
+let con = confirm("do you want to see prompt again");
+if (con) {
+  if (age >= 18) {
+    alert("You can drive...");
+  } else {
+    alert("You cannot drive");
+  }
+} else {
+  alert("you cannot choosed");
 }
