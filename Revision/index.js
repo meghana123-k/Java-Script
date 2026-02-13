@@ -1,14 +1,14 @@
-// // Write a program to take input from the user until they enter 0 and store those numbers in an array. Then, filter out the numbers that are divisible by 10 and print the resulting array. Finally, create a new array that contains the squares of the original numbers and print it.
-// const arr = []
+// Write a program to take input from the user until they enter 0 and store those numbers in an array. Then, filter out the numbers that are divisible by 10 and print the resulting array. Finally, create a new array that contains the squares of the original numbers and print it.
+const arr = []
 
-// while(true) {
-//   let input = Number(prompt("Enter a number:"));
-//   if(input === 0) {
-//     break
-//   }
-//   arr.push(input)
-// }
-// console.log(arr);
+while(true) {
+  let input = Number(prompt("Enter a number:"));
+  if(input === 0) {
+    break
+  }
+  arr.push(input)
+}
+console.log(arr);
 
 // Filtering out numbers that are divisible by 10
 const a = [10, 21, 30, 40, 55]
