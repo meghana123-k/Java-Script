@@ -34,3 +34,10 @@ li.forEach((lst) => {
   lst.style.borderRadius = "2px"
   lst.style.padding = "10px";
 });
+
+odd = document.querySelectorAll("li:nth-child(odd)")
+odd.forEach((ele) => (ele.style.backgroundColor = "#A9A9A9"));
+
+even = document.querySelectorAll("li:nth-child(even)")
+
+even.forEach((ele) => (ele.style.backgroundColor = "#D3D3D3"));
