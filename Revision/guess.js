@@ -52,3 +52,22 @@ if (color === "yellow") {
 } else {
   alert("Invalid");
 }
+// Snake, water and Gun game: Write a program to play the snake, water, and gun game against the computer. The user will input their choice (snake, water, or gun), and the computer will randomly select one of the three options. The program will then determine the winner based on the rules of the game and display the result to the user.
+let user = prompt("Enter your choice: snake, water, gun");
+let comp = Math.random();
+if (comp < 0.34) {
+  comp = "snake";
+} else if (comp < 0.67) {
+  comp = "water";
+} else {
+  comp = "gun";
+}
+console.log(`Computer choice: ${comp}`);
+
+if (user === comp) {
+  console.log("It's a tie!");
+} else if ((user === "snake" && comp === "water") || (user === "water" && comp === "gun") || (user === "gun" && comp === "snake")) {
+  console.log("You win!");
+} else {
+  console.log("Computer wins!");
+}
