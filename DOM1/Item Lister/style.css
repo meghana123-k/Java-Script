@@ -25,10 +25,11 @@ body {
 }
 
 /*-------- MAIN CONTENT --------*/
+
 #main {
     border: 1px solid rgb(180, 180, 180);
     padding: 20px;
-    margin-top: 20px;
+    margin: 50px;
 }
 
 .title {
@@ -54,12 +55,22 @@ input {
 }
 
 .list-group-item {
+    display: flex;
     border: 1px solid rgb(209, 207, 207);
     border-bottom: 0.1px solid rgb(209, 207, 207);
     list-style-type: none;
     padding: 10px;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .list-group-item:last-child {
     margin-bottom: 10px;
+}
+
+.delete {
+    background-color: red;
+    padding: 3px 7px;
+    color: white;
+    border-radius: 50%;
 }

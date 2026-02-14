@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Item Lister</title>
-    <!-- <link rel="stylesheet" href="style.css" /> -->
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <header id="main-header" class="bg-success">
@@ -18,7 +18,7 @@
       <div id="main" class="card card-body">
         <h2 class="title">Add Items</h2>
 
-        <form>
+        <form id="addForm">
           <input type="text" class="inputText"/>
           <input type="submit" class="btn" value="Submit" />
         </form>
@@ -26,13 +26,25 @@
         <h2 class="title">Items</h2>
 
         <ul id="items" class="list-group">
-          <li class="list-group-item">item 1</li>
-          <li class="list-group-item">item 2</li>
-          <li class="list-group-item">item 3</li>
-          <li class="list-group-item">item 4</li>
+          <li class="list-group-item">item 1
+            <button class="delete">X</button>
+          </li>
+          <li class="list-group-item">
+            item 2
+            <button class="delete">X</button>
+          </li>
+          <li class="list-group-item">
+            item 3
+            <button class="delete">X</button>
+          </li>
+          <li class="list-group-item">
+            item 4
+            <button class="delete">X</button>
+          </li>
         </ul>
       </div>
     </div>
     <script src="script.js"></script>
+    <!-- <script src="practice.js"></script> -->
   </body>
 </html>
