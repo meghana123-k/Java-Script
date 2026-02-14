@@ -9,7 +9,7 @@ body {
 }
 
 .container {
-    padding: 0px 450px;
+    padding: 0px 50px;
 }
 #main-header {
     background-color: rgb(0, 126, 0);
@@ -54,9 +54,9 @@ input {
 }
 
 .list-group-item {
-    border: 1px solid rgb(180, 180, 180);
+    border: 1px solid rgb(209, 207, 207);
+    border-bottom: 0.1px solid rgb(209, 207, 207);
     list-style-type: none;
-    margin-bottom: 20px;
     padding: 10px;
 }
 
