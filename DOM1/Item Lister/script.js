@@ -14,7 +14,7 @@ container.style.padding = "0px 50px"
 container.style.border = "1px solid black"
 
 inputs = document.querySelectorAll("input")
-console.log(inputs);
+// console.log(inputs);
 for(let input of inputs) {
     input.style.padding = "10px"
     input.style.borderRadius = "5px"
@@ -22,6 +22,18 @@ for(let input of inputs) {
 submitBtn = document.querySelector(".btn")
 submitBtn.style.backgroundColor = "black"
 submitBtn.style.color = "white"
+
+
+let add = document.querySelector("#items");
+let newList = document.querySelectorAll("li");
+let newele = document.createElement("li");
+newele.style.padding = "10px";
+newele.innerText = "Item 5"
+newele.style.listStyleType = "none"
+newele.style.border = "1px solid rgb(209, 207, 207)";
+newele.style.borderRadius = "2px";
+add.appendChild(newele)
+
 
 const ul = document.querySelector("#items");
 ul.style.paddingLeft = "0px"
