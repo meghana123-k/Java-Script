@@ -21,3 +21,10 @@ let users = [
 ];
 let activeUsers = users.filter((u) => u.active === true);
 console.log(activeUsers);
+
+let sum = nums.reduce((acc, curr) => acc + curr, 0)
+console.log(sum);
+
+let cart = [{ price: 100 }, { price: 200 }, { price: 300 }];
+let totPrice = cart.reduce((acc, curr)=> acc + curr.price, 0);
+console.log(totPrice);
