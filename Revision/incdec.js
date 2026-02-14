@@ -14,3 +14,17 @@ dec.addEventListener("click", () => {
     output.textContent = count;
   }
 });
+
+// This code defines a book object with properties such as title, price, and inStock. It also includes a method called applyDiscount that takes a percentage as an argument and updates the price of the book by applying the discount. The method calculates the new price by subtracting the discount amount from the original price and logs the updated price to the console. Finally, it calls the applyDiscount method with a 10% discount to demonstrate its functionality.
+const book = {
+  title: "Amma diary lo konni pagelu..",
+  price: 100.0,
+  inStock: true,
+  applyDiscount: function (percent) {
+    this.price = this.price - (this.price * percent) / 100;
+    console.log(`updated price: ${this.price}`);
+  },
+};
+
+console.log(`Title: ${book.title}, Price: ${book["price"]}, Available: ${book.inStock}`)
+book.applyDiscount(10);
