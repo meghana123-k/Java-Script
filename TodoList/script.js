@@ -33,6 +33,7 @@ function addTask(e) {
   console.log(tasks);
 
   taskInput.value = "";
+  saveToLocalStorage();
   render();
 }
 function changeFilter(e) {
@@ -110,14 +111,30 @@ function handleComplete(e) {
       task.completed = !task.completed;
     }
   })
+  saveToLocalStorage();
   render();
 }
 function handleDelete(e) {
   const li = e.target.closest('li')
   const id = Number(li.dataset.id);
   tasks = tasks.filter(task => task.id !== id)
+  saveToLocalStorage();
   render();
 }
 function completedCount() {
   return tasks.filter((t) => t.completed).length;
 }
+function saveToLocalStorage() {
+  localStorage.setItem("tasks", JSON.stringify(tasks));
+}
+
+function loadFromLocalStorage() {
+  const storedTasks = localStorage.getItem("tasks");
+
+  if (storedTasks) {
+    tasks = JSON.parse(storedTasks);
+  }
+}
+loadFromLocalStorage();
+render();
+
