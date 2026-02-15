@@ -1,24 +1,32 @@
-let form = document.getElementById('addForm')
-let itemList = document.getElementById('items')
-let filter = document.querySelector('.filter')
+const form = document.getElementById('addForm')
+const itemList = document.getElementById('items')
+const filter = document.querySelector('.filter')
+const inputField = document.querySelector('.inputText')
 // console.dir(document.querySelector('li'));
 form.addEventListener('submit', addItem);
 itemList.addEventListener('click' || 'Enter', deleteItem);
-filter.addEventListener('keyup', searchItem);
+filter.addEventListener('input', searchItem);
 function addItem(e) {
     e.preventDefault()
-    let inputText = document.querySelector('.inputText').value
-    let newList = document.createElement('li');
-    let newButton = document.createElement('button')
-    newList.className = 'list-group-item';
-    newList.appendChild(document.createTextNode(inputText));
-    newButton.className = 'delete'
-    newButton.appendChild(document.createTextNode('X'));
-    newList.appendChild(newButton)
-    itemList.appendChild(newList)
-    document.querySelector(".inputText").value = "";
+    const value = inputField.value.trim()
+    if(!value) {
+        alert("Item cannot be empty")
+        return;
+    }
+    const li = createListItem(value)
+
+    itemList.appendChild(li)
+    inputField.value = ""
 }
 
+function createListItem(value) {
+    const li = document.createElement('li')
+    li.className = 'list-group-item'
+    li.innerHTML = `
+    ${value}
+    <button class = "delete">X</button>`
+    return li;
+}
 function deleteItem(e) {
 
     if(e.target.classList.contains('delete')) {
@@ -30,10 +38,10 @@ function deleteItem(e) {
 }
 function searchItem(e) {
     let text = e.target.value.toLowerCase();
-    let items = itemList.getElementsByTagName('li');
-    Array.from((items)).forEach(item => {
-        let itemName = item.firstChild.textContent;
-        if(itemName.toLowerCase().indexOf(text) != -1) {
+    let items = itemList.querySelectorAll('li');
+    items.forEach(item => {
+        let itemText = item.firstChild.textContent;
+        if(itemText.toLowerCase().indexOf(text) != -1) {
             item.style.display = "flex"
         } else {
             item.style.display = "none"
