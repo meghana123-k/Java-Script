@@ -147,7 +147,7 @@ button {
 }
 
 /* ===== ACTION BUTTONS ===== */
-.task-actions {
+.task-group-list {
   display: flex;
   gap: 8px;
 }
